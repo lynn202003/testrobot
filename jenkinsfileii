@@ -1,0 +1,16 @@
+node{
+   stage("构建"){
+    echo "构建"
+}
+   stage("测试"){
+    echo "测试"
+   // robot --pythonpath test --test *001 --test *002 --test *003 test/test.robot
+    bat label: '', script: 'robot --pythonpath test --test *001 --test *002 --test *003 test/test.robot'
+}
+   stage("部署"){
+   echo "部署"
+}
+   stage("验收"){
+   echo "验收"
+}
+}
